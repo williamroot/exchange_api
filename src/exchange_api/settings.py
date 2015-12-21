@@ -16,7 +16,7 @@ PROJECT_PATH = os.path.abspath(
 SECRET_KEY = 'v@*q#vn_7((sil2muqld1rr_j^vbkgta2$cr7z6!5e-g1i#l9n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -132,4 +132,3 @@ CHROMEDRIVER_LOCATION = os.path.join(
     'chromedriver',
     'chromedriver'
 )
-os.environ["webdriver.chrome.driver"] = CHROMEDRIVER_LOCATION
