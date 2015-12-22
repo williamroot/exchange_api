@@ -11,10 +11,30 @@ class Currency(models.Model):
         return self.iso_code
 
 class Exchange(models.Model):
-    source = models.ForeignKey(Currency, related_name='source_currency')
-    target = models.ForeignKey(Currency, related_name='target_currency')
-    value = models.DecimalField(null=False, decimal_places=2, max_digits=10)
-    created = models.DateField(default=datetime.now)
+    source = models.ForeignKey(
+        Currency,
+        related_name='source_currency'
+    )
+    target = models.ForeignKey(
+        Currency,
+        related_name='target_currency'
+    )
+    value = models.DecimalField(
+        null=False,
+        decimal_places=2,
+        max_digits=10
+    )
+    created = models.DateTimeField(default=datetime.now)
+
+    @property
+    def target_code(self):
+        if self.target:
+            return self.target.iso_code
+
+    @property
+    def source_code(self):
+        if self.source:
+            return self.source.iso_code
 
     def __str__(self):
         return '{} - {} : {}'.format(

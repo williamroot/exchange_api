@@ -7,8 +7,7 @@ class CurrencySerialiazer(serializers.ModelSerializer):
         model = Currency
         fields = ('iso_code', 'name')
 
-
 class ExchangeSerialiazer(serializers.ModelSerializer):
     class Meta:
         model = Exchange
-        fields = ('source', 'target', 'value')
+        fields = ('source_code', 'target_code', 'value', 'created')

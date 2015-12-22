@@ -2,16 +2,9 @@ from django.conf.urls import url, include
 from rest_framework import routers
 from . import views
 
-
-
-# Wire up our API using automatic URL routing.
-# Additionally, we include login URLs for the browsable API.
-
-router = routers.DefaultRouter()
-router.register(r'currency', views.CurrencyViewSet)
-router.register(r'exchange', views.ExchangeViewSet)
-
 urlpatterns = [
-     url(r'^', include(router.urls)),
-
+     url(r'^currency/$', views.CurrencyList.as_view()),
+     url(r'^currency/(?P<iso_code>.+)/$', views.CurrencyDetail.as_view()),
+     url(r'^exchange/$', views.ExchangeList.as_view()),
+     url(r'^exchange/(?P<source>[a-z]+)/(?P<target>[a-z]+)/$', views.ExchangeDetail.as_view())
 ]
