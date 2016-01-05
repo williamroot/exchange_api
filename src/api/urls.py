@@ -6,5 +6,7 @@ urlpatterns = [
      url(r'^currency/$', views.CurrencyList.as_view()),
      url(r'^currency/(?P<iso_code>.+)/$', views.CurrencyDetail.as_view()),
      url(r'^exchange/$', views.ExchangeList.as_view()),
-     url(r'^exchange/(?P<source>[a-z]+)/(?P<target>[a-z]+)/$', views.ExchangeDetail.as_view())
+     url(r'^exchange/(?P<source>.+)/(?P<target>.+)/$',
+        views.ExchangeDetail.as_view()
+    )
 ]
