@@ -132,3 +132,9 @@ CHROMEDRIVER_LOCATION = os.path.join(
     'chromedriver',
     'chromedriver'
 )
+
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
