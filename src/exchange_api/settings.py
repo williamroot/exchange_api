@@ -13,10 +13,10 @@ PROJECT_PATH = os.path.abspath(
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'v@*q#vn_7((sil2muqld1rr_j^vbkgta2$cr7z6!5e-g1i#l9n'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
